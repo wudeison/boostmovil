@@ -1,4 +1,4 @@
-/* Reset y base */
+/* RESET */
 * {
   margin: 0;
   padding: 0;
@@ -13,7 +13,7 @@
   overflow-x: hidden;
 }
 
-/* Header con gradiente */
+/* HEADER */
 .profile-header {
   position: relative;
   min-height: 200px;
@@ -22,7 +22,6 @@
   overflow: visible;
   padding-bottom: 2rem;
 }
-
 .header-overlay {
   position: absolute;
   top: 0;
@@ -34,6 +33,7 @@
   opacity: 0.3;
 }
 
+
 .header-content {
   position: relative;
   z-index: 2;
@@ -44,7 +44,6 @@
   height: 100%;
   color: white;
 }
-
 .header-actions {
   display: flex;
   flex-direction: column;
@@ -66,11 +65,9 @@
   filter: brightness(0) invert(1) drop-shadow(0 2px 8px rgba(0,0,0,0.3));
   transition: transform 0.3s ease;
 }
-
 .header-logo:hover {
   transform: scale(1.05);
 }
-
 .btn-logout {
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(10px);
@@ -86,13 +83,11 @@
   align-items: center;
   gap: 0.5rem;
 }
-
 .btn-logout:hover {
   background: rgba(255, 255, 255, 0.3);
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
-
 .btn-delete-inline {
   background: rgba(239, 68, 68, 0.15);
   border: 1px solid rgba(239, 68, 68, 0.4);
@@ -104,17 +99,14 @@
   cursor: pointer;
   transition: all 0.3s ease;
 }
-
 .btn-delete-inline:hover {
   background: rgba(239, 68, 68, 0.25);
   transform: translateY(-1px);
   box-shadow: 0 3px 8px rgba(239, 68, 68, 0.3);
 }
-
 .welcome-text-left {
   text-align: left;
 }
-
 .welcome-text-left h1 {
   font-size: 1.3rem;
   font-weight: 600;
@@ -125,14 +117,12 @@
   -webkit-text-stroke: 1px rgba(209, 213, 219, 0.9);
   text-stroke: 1px rgba(209, 213, 219, 0.9);
 }
-
 .welcome-text-left .user-name {
   font-size: 1.1rem;
   font-weight: 500;
   margin-bottom: 0.3rem;
   opacity: 0.9;
 }
-
 .welcome-text-left .time {
   font-size: 0.95rem;
   opacity: 0.85;
@@ -140,51 +130,56 @@
   letter-spacing: 0.5px;
 }
 
-/* Sesiones laterales en el header azul */
+
+/* =========================
+   SESIONES (ESTILO LIMPIO)
+========================= */
+
 .sesiones-lateral {
-  position: absolute;
-  top: 180px;
-  width: 280px;
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 15px;
-  padding: 1.5rem;
-  min-height: 200px;
-  max-height: none;
-  overflow: visible;
-  z-index: 100;
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
-
 .sesiones-derecha {
-  right: 2rem;
+  right: auto;
+  left: auto;
 }
-
 .sesiones-izquierda {
-  left: 2rem;
+  left: auto;
+  right: auto;
 }
-
 .sesiones-lateral-titulo {
-  color: white;
+  color: rgb(111, 122, 221);
   font-size: 1.2rem;
   margin-bottom: 1rem;
   font-weight: 600;
 }
-
 .loading-sesiones-lateral,
 .sin-sesiones-lateral {
   text-align: center;
   padding: 1.5rem;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(34, 135, 153, 0.8);
   font-size: 0.95rem;
 }
 
+
+/* 🔥 CLAVE: UNA DEBAJO DE LA OTRA */
 .sesiones-lista {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  width: 100%;
 }
 
+
+/* TARJETAS */
 .sesion-card-lateral {
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(5px);
@@ -193,8 +188,9 @@
   padding: 1rem;
   transition: all 0.3s ease;
   animation: flotar 3s ease-in-out infinite;
+  width: 100%;
+  display: block;
 }
-
 @keyframes flotar {
   0%, 100% {
     transform: translateY(0px);
@@ -203,13 +199,11 @@
     transform: translateY(-5px);
   }
 }
-
 .sesion-card-lateral:hover {
   background: rgba(255, 255, 255, 0.25);
   transform: translateY(-8px) scale(1.02);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
-
 .sesion-fecha-hora {
   margin-bottom: 0.8rem;
   padding-bottom: 0.8rem;
@@ -217,14 +211,14 @@
 }
 
 .fecha-texto {
-  color: white;
+  color: rgb(188, 184, 204);
   font-size: 0.9rem;
   font-weight: 600;
   margin-bottom: 0.3rem;
 }
 
 .hora-texto {
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(193, 189, 219, 0.9);
   font-size: 0.85rem;
 }
 
@@ -233,14 +227,14 @@
 }
 
 .cancelado-por-texto {
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(181, 172, 194, 0.85);
   font-size: 0.8rem;
   margin-bottom: 0.6rem;
 }
 
 .cliente-nombre,
 .monto-texto {
-  color: rgba(255, 255, 255, 0.95);
+  color: rgba(217, 218, 224, 0.95);
   font-size: 0.9rem;
   margin: 0.3rem 0;
 }
@@ -274,15 +268,22 @@
   color: white;
 }
 
-/* Contenido del perfil */
+
+/* =========================
+   CONTENIDO PERFIL
+========================= */
+
 .profile-content {
   max-width: 700px;
-  margin: -150px auto 3rem;
+  margin: -60px auto 3rem;
   padding: 0 1.5rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
   position: relative;
   z-index: 10;
 }
-
 .profile-card {
   background: white;
   border-radius: 20px;
@@ -290,7 +291,6 @@
   overflow: hidden;
   animation: slideUp 0.5s ease-out;
 }
-
 @keyframes slideUp {
   from {
     opacity: 0;
@@ -301,6 +301,7 @@
     transform: translateY(0);
   }
 }
+
 
 /* Avatar */
 .avatar-container {
@@ -319,11 +320,9 @@
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease;
 }
-
 .profile-avatar:hover {
   transform: scale(1.05);
 }
-
 .avatar-placeholder {
   width: 150px;
   height: 150px;
@@ -339,7 +338,6 @@
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
   text-transform: uppercase;
 }
-
 .status-badge {
   position: absolute;
   bottom: -0.5rem;
@@ -354,13 +352,13 @@
   box-shadow: 0 3px 10px rgba(16, 185, 129, 0.4);
 }
 
+
 /* Información principal */
 .profile-main-info {
   text-align: center;
   padding: 1.5rem 2rem 2rem;
   border-bottom: 1px solid #e5e7eb;
 }
-
 .profile-name {
   font-size: 2rem;
   font-weight: 700;
@@ -374,6 +372,7 @@
   font-weight: 500;
 }
 
+
 /* Grid de información */
 .info-grid {
   display: grid;
@@ -383,7 +382,8 @@
   background: #f9fafb;
 }
 
-@media (max-width: 800px) {
+
+@media (max-width: 768px) {
   .info-grid {
     grid-template-columns: 1fr;
   }
@@ -454,6 +454,7 @@
   line-height: 1.7;
 }
 
+
 /* Botones de acción */
 .profile-actions {
   display: flex;
@@ -462,7 +463,6 @@
   background: white;
   border-top: 1px solid #e5e7eb;
 }
-
 .profile-actions button {
   flex: 1;
   padding: 1rem 2rem;
@@ -534,223 +534,4 @@
 .btn-home:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(30, 58, 95, 0.4);
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .profile-header {
-    height: 180px;
-  }
-
-  .header-content {
-    padding: 1rem 1.5rem;
-  }
-
-  .header-main {
-    gap: 0.5rem;
-  }
-
-  .header-logo {
-    width: 130px;
-  }
-
-  .welcome-text-left h1 {
-    font-size: 1.1rem;
-  }
-
-  .welcome-text-left .time {
-    font-size: 0.85rem;
-  }
-
-  .btn-logout {
-    padding: 0.6rem 1.2rem;
-    font-size: 0.85rem;
-  }
-
-  .profile-content {
-    margin-top: -80px;
-  }
-
-  .profile-avatar,
-  .avatar-placeholder {
-    width: 120px;
-    height: 120px;
-  }
-
-  .avatar-placeholder {
-    font-size: 2.5rem;
-  }
-
-  .profile-name {
-    font-size: 1.6rem;
-  }
-
-  .info-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-    padding: 1.5rem;
-  }
-
-  .profile-actions {
-    flex-direction: column;
-  }
-
-  .btn-logout {
-    padding: 0.6rem 1.2rem;
-    font-size: 0.85rem;
-  }
-}
-
-/* Sección de sesiones reservadas */
-.sesiones-section {
-  background: white;
-  border-radius: 20px;
-  padding: 2rem;
-  margin: 2rem auto;
-  max-width: 1200px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-}
-
-.sesiones-titulo {
-  color: #667eea;
-  font-size: 1.8rem;
-  margin-bottom: 1.5rem;
-  font-weight: 700;
-}
-
-.loading-sesiones,
-.sin-sesiones {
-  text-align: center;
-  padding: 3rem;
-  color: #666;
-  font-size: 1.1rem;
-}
-
-.sesiones-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  gap: 1.5rem;
-}
-
-.sesion-card {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  border-radius: 15px;
-  padding: 1.5rem;
-  color: white;
-  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.sesion-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
-}
-
-.sesion-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-.sesion-header h3 {
-  font-size: 1.3rem;
-  font-weight: 600;
-}
-
-.estado-badge {
-  padding: 0.3rem 0.8rem;
-  border-radius: 20px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  text-transform: capitalize;
-}
-
-.estado-pendiente {
-  background: rgba(255, 193, 7, 0.9);
-  color: #333;
-}
-
-.estado-confirmada {
-  background: rgba(76, 175, 80, 0.9);
-  color: white;
-}
-
-.estado-cancelada {
-  background: rgba(244, 67, 54, 0.9);
-  color: white;
-}
-
-.estado-completada {
-  background: rgba(33, 150, 243, 0.9);
-  color: white;
-}
-
-.sesion-info {
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-}
-
-.sesion-info p {
-  font-size: 0.95rem;
-  line-height: 1.5;
-  display: flex;
-  align-items: flex-start;
-  gap: 0.5rem;
-}
-
-.sesion-info strong {
-  font-weight: 600;
-  min-width: 100px;
-}
-
-/* Botón cancelar sesión */
-.btn-cancelar-sesion {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: rgba(220, 53, 69, 0.9);
-  border: none;
-  border-radius: 8px;
-  width: 35px;
-  height: 35px;
-  cursor: pointer;
-  font-size: 1.2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-  z-index: 10;
-  opacity: 0.8;
-}
-
-.btn-cancelar-sesion:hover {
-  background: rgba(220, 53, 69, 1);
-  transform: scale(1.1);
-  opacity: 1;
-  box-shadow: 0 4px 12px rgba(220, 53, 69, 0.4);
-}
-
-.btn-cancelar-sesion:active {
-  transform: scale(0.95);
-}
-
-/* Variante para mover el botón abajo */
-.btn-cancelar-sesion-bottom {
-  top: auto !important;
-  bottom: 10px !important;
-}
-
-@media (max-width: 768px) {
-  .sesiones-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .sesiones-section {
-    padding: 1.5rem;
-    margin: 1rem;
-  }
 }

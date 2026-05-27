@@ -1,0 +1,9 @@
+{
+  "appId": "com.example.mycapacitorapp",
+  "appName": "My Capacitor App",
+  "webDir": "src",
+  "bundledWebRuntime": false,
+  "plugins": {
+    // Add any plugins you are using here
+  }
+}

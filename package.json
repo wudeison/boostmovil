@@ -1,7 +1,7 @@
 {
   "name": "boost_web",
   "version": "1.0.0",
-  "description": "",
+  "description": "- **Brayan Stiven Rojas Fernández** - 202310325\r - **Wudeison Tovar Cruz** - 201610485\r - **Carlos Mario Ospino Anaya** - 201720364",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,5 +9,17 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs"
+  "type": "commonjs",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wudeison/BOOSTWEB.git"
+  },
+  "bugs": {
+    "url": "https://github.com/wudeison/BOOSTWEB/issues"
+  },
+  "homepage": "https://github.com/wudeison/BOOSTWEB#readme",
+  "dependencies": {
+    "@capacitor/cli": "^8.3.4",
+    "@capacitor/core": "^8.3.4"
+  }
 }

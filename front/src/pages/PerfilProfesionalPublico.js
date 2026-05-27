@@ -24,7 +24,7 @@ function PerfilProfesionalPublico() {
 
   const cargarPerfil = async () => {
     try {
-      const response = await fetch(`http://localhost:4000/api/profesionales/publico/${id}`);
+      const response = await fetch(`https://backend-a9gw.onrender.com/api/profesionales/publico/${id}`);
       const data = await response.json();
       
       if (data.profesional) {
@@ -78,7 +78,7 @@ function PerfilProfesionalPublico() {
     const idCliente = usuario.idUsuario;
 
     try {
-      const response = await fetch('http://localhost:4000/api/reservas/crear', {
+      const response = await fetch('https://backend-a9gw.onrender.com/api/reservas/crear', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -192,7 +192,7 @@ function PerfilProfesionalPublico() {
                     profesional.fotoPerfil
                       ? profesional.fotoPerfil.startsWith('http') || profesional.fotoPerfil.startsWith('/static')
                         ? profesional.fotoPerfil
-                        : `http://localhost:4000${profesional.fotoPerfil}`
+                        : `https://backend-a9gw.onrender.com${profesional.fotoPerfil}`
                       : "https://via.placeholder.com/200"
                   }
                   alt={profesional.nombreCompleto}

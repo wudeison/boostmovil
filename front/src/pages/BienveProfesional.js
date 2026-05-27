@@ -73,7 +73,7 @@ const BienveProfesional = () => {
   const cargarSesiones = async () => {
     setLoadingSesiones(true);
     try {
-      const response = await fetch(`http://localhost:4000/api/reservas/profesional/${profesional.idProfesional}`);
+      const response = await fetch(`https://backend-a9gw.onrender.com/api/reservas/profesional/${profesional.idProfesional}`);
       const data = await response.json();
       if (response.ok) {
         setSesiones(data.sesiones || []);
@@ -123,7 +123,7 @@ const BienveProfesional = () => {
     }
 
     try {
-      const response = await fetch(`http://localhost:4000/api/reservas/cancelar/${idSesion}?canceladoPor=profesional`, {
+      const response = await fetch(`https://backend-a9gw.onrender.com/api/reservas/cancelar/${idSesion}?canceladoPor=profesional`, {
         method: 'DELETE',
       });
 
@@ -168,7 +168,7 @@ const BienveProfesional = () => {
     if (!confirmacion) return;
 
     try {
-      const response = await fetch(`http://localhost:4000/api/usuarios/${profesional.idUsuario}`, {
+      const response = await fetch(`https://backend-a9gw.onrender.com/api/usuarios/${profesional.idUsuario}`, {
         method: "DELETE",
       });
       const data = await response.json().catch(() => ({}));
@@ -202,7 +202,7 @@ const BienveProfesional = () => {
   // Función para aceptar y ocultar la notificación
   const aceptarNotificacion = async (idSesion) => {
     try {
-      await fetch(`http://localhost:4000/api/reservas/notificacion/${idSesion}`, {
+      await fetch(`https://backend-a9gw.onrender.com/api/reservas/notificacion/${idSesion}`, {
         method: "PUT",
       });
       cargarSesiones();
@@ -213,7 +213,7 @@ const BienveProfesional = () => {
 
   const archivarSesionCancelada = async (idSesion) => {
     try {
-      const response = await fetch(`http://localhost:4000/api/reservas/archivar/${idSesion}?tipo=profesional`, {
+      const response = await fetch(`https://backend-a9gw.onrender.com/api/reservas/archivar/${idSesion}?tipo=profesional`, {
         method: "PUT",
       });
 

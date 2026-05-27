@@ -3,18 +3,14 @@
 ## Integrantes
 - **Brayan Stiven Rojas Fernández** - 202310325
 - **Wudeison Tovar Cruz** - 201610485
-- **Carlos Mario Ospino Anaya** - 201720364
+- **Daniel Castro** -   202310422
 
 ---
 
 
 ## Acceso a la Base de Datos
-La aplicación utiliza MySQL. Configuración actual:
-
-- **Host:** localhost
-- **Usuario:** root
-- **Contraseña:** tarrao
-- **Base de datos:** boost
+la base de datos esta en un servidor railway y esta es la url publica: 
+mysql://${{MYSQLUSER}}:${{MYSQL_ROOT_PASSWORD}}@${{RAILWAY_TCP_PROXY_DOMAIN}}:${{RAILWAY_TCP_PROXY_PORT}}/${{MYSQL_DATABASE}}
 
 
 
@@ -24,33 +20,25 @@ La aplicación utiliza MySQL. Configuración actual:
 
 ### 1. Clonar el repositorio
 ```bash
-git clone https://github.com/wudeison/BOOSTWEB.git
+git clone https://github.com/wudeison/boostmovil.git
 
 ```
 
 ### 2. Backend
-```bash
-cd backend
-npm install
-node server.js
-```
-El backend estará disponible en [http://localhost:4000](http://localhost:4000)
+
+El backend estará disponible en [http://backend-a9gw.onrender.com](http://backend-a9gw.onrender.com)
 
 ### 3. Frontend
-```bash
-cd front
-npm install
-npm start
-```
+esta disponible desde la apk que se adjuntara en el repositorio.
 El frontend estará disponible en [http://localhost:3000](http://localhost:3000)
 
 ---
 
 ## Requisitos
 - Node.js >= 14
-- MySQL Server
+- android estudio
 
 ---
 
 ## Notas
-- Asegúrate de tener la base de datos `boost` creada en MySQL antes de iniciar el backend.
+- para este proyecto solo necesitamos la apk, porque el backend y la base de datos estan en servidores publicos en internet.

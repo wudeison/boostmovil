@@ -18,7 +18,7 @@
 
 .disponibilidad-modal-content {
   width: 100%;
-  max-width: 1300px;
+  max-width: 1000px; /* 👈 MÁS PEQUEÑO */
   max-height: 95vh;
   overflow-y: auto;
   animation: modalSlideIn 0.3s ease;
@@ -44,7 +44,7 @@
 .disponibilidad-page-modal {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   border-radius: 25px;
-  padding: 2rem;
+  padding: 1.5rem;
 }
 
 .loading {
@@ -64,6 +64,7 @@
   margin-bottom: 1rem;
   border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -71,7 +72,7 @@
 }
 
 .disponibilidad-header h1 {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   margin: 0;
   color: white;
   font-weight: 600;
@@ -79,68 +80,63 @@
 }
 
 .subtitle {
-  font-size: 1.1rem;
+  font-size: 1rem;
   opacity: 0.9;
 }
 
 .btn-close {
   position: absolute;
   left: 0.8rem;
+
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(10px);
+
   color: white;
   border: 1px solid rgba(255, 255, 255, 0.3);
+
   border-radius: 8px;
   padding: 0.4rem 0.8rem;
+
   display: flex;
   justify-content: center;
   align-items: center;
+
   font-size: 0.9rem;
   cursor: pointer;
+
   transition: all 0.3s ease;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .btn-close:hover {
   background: rgba(255, 255, 255, 0.3);
   transform: translateX(-3px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-}
-
-.btn-back {
-  position: absolute;
-  top: 2rem;
-  left: 2rem;
-  background: rgba(255, 255, 255, 0.2);
-  border: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: 12px;
-  color: white;
-  cursor: pointer;
-  font-size: 1rem;
-  backdrop-filter: blur(10px);
-  transition: all 0.3s ease;
-}
-
-.btn-back:hover {
-  background: rgba(255, 255, 255, 0.3);
-  transform: translateX(-5px);
 }
 
 .disponibilidad-container {
-  max-width: 1200px;
+  max-width: 900px; /* 👈 MÁS ESTRECHO */
   margin: 0 auto;
+
   display: grid;
-  grid-template-columns: 400px 1fr;
-  gap: 2rem;
+
+  /* 👇 CALENDARIO MÁS PEQUEÑO */
+  grid-template-columns: 320px 1fr;
+
+  gap: 1rem;
 }
+
+/* CALENDARIO */
 
 .calendario {
   background: rgba(255, 255, 255, 0.15);
-  padding: 1.5rem;
-  border-radius: 20px;
+
+  padding: 1rem; /* 👈 MÁS COMPACTO */
+
+  border-radius: 18px;
+
   backdrop-filter: blur(10px);
+
   border: 1px solid rgba(255, 255, 255, 0.2);
+
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
@@ -148,62 +144,72 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1.5rem;
-  padding: 0;
+
+  margin-bottom: 1rem;
 }
 
 .mes-controls h2 {
   color: white;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   margin: 0;
 }
 
 .btn-mes {
   background: rgba(255, 255, 255, 0.2);
+
   border: none;
-  width: 40px;
-  height: 40px;
+
+  width: 34px;
+  height: 34px;
+
   border-radius: 10px;
+
   color: white;
-  font-size: 1.5rem;
+
+  font-size: 1.2rem;
+
   cursor: pointer;
+
   transition: all 0.3s ease;
 }
 
 .btn-mes:hover {
   background: rgba(255, 255, 255, 0.3);
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
-.calendario {
-  background: rgba(255, 255, 255, 0.15);
-  padding: 1.5rem;
-  border-radius: 20px;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-}
+/* DÍAS */
 
 .dias-semana {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 0.5rem;
-  margin-bottom: 1rem;
+
+  gap: 0.25rem; /* 👈 MÁS PEGADOS */
+
+  margin-bottom: 0.5rem;
 }
 
 .dia-semana-header {
   text-align: center;
+
   color: white;
+
   font-weight: bold;
-  padding: 0.5rem;
+
+  padding: 0.45rem;
+
   background: rgba(255, 255, 255, 0.1);
+
   border-radius: 8px;
+
+  font-size: 0.75rem;
 }
 
 .dias-grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 0.5rem;
+
+  gap: 0.25rem; /* 👈 MÁS PEQUEÑO */
 }
 
 .dia-vacio {
@@ -212,21 +218,30 @@
 
 .dia-celda {
   aspect-ratio: 1;
+
+  min-width: 34px; /* 👈 CLAVE */
+
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
   background: rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
+
+  border-radius: 10px;
+
   cursor: pointer;
+
   position: relative;
-  transition: all 0.3s ease;
+
+  transition: all 0.25s ease;
+
   border: 2px solid transparent;
 }
 
 .dia-celda:hover {
   background: rgba(255, 255, 255, 0.2);
-  transform: scale(1.05);
+  transform: scale(1.04);
 }
 
 .dia-celda.hoy {
@@ -245,37 +260,56 @@
 
 .numero-dia {
   color: white;
-  font-size: 1.2rem;
+
+  font-size: 0.95rem; /* 👈 MÁS PEQUEÑO */
+
   font-weight: bold;
 }
 
 .indicador-horarios {
   position: absolute;
-  top: 5px;
-  right: 5px;
-  background: rgba(255, 255, 255, 0.8);
+
+  top: 4px;
+  right: 4px;
+
+  background: rgba(255, 255, 255, 0.85);
+
   color: #667eea;
-  font-size: 0.7rem;
+
+  font-size: 0.6rem;
+
   font-weight: bold;
-  width: 20px;
-  height: 20px;
+
+  width: 16px;
+  height: 16px;
+
   border-radius: 50%;
+
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+/* PANEL DERECHO */
+
 .panel-dia {
   background: rgba(255, 255, 255, 0.15);
-  padding: 1.5rem;
-  border-radius: 20px;
+
+  padding: 1rem;
+
+  border-radius: 18px;
+
   backdrop-filter: blur(10px);
+
   border: 1px solid rgba(255, 255, 255, 0.2);
+
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-  max-height: 600px;
+
+  max-height: 550px;
+
   overflow-y: auto;
+
   scrollbar-width: none;
-  -ms-overflow-style: none;
 }
 
 .panel-dia::-webkit-scrollbar {
@@ -284,78 +318,42 @@
 
 .panel-dia h3 {
   color: white;
+
   margin-top: 0;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
+
   text-transform: capitalize;
+
+  font-size: 1.1rem;
 }
 
 .panel-dia h4 {
   color: white;
-  font-size: 1rem;
+
+  font-size: 0.95rem;
+
   margin-bottom: 0.75rem;
+
   opacity: 0.9;
 }
 
-/* Panel de instrucción */
-.panel-instruccion {
-  background: rgba(255, 255, 255, 0.15);
-  padding: 2rem;
-  border-radius: 20px;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 300px;
-}
-
-.instruccion-content {
-  text-align: center;
-  color: white;
-}
-
-.instruccion-icon {
-  font-size: 4rem;
-  display: block;
-  margin-bottom: 1rem;
-  animation: bounce 2s infinite;
-}
-
-@keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-
-.instruccion-content h3 {
-  margin: 0 0 0.5rem 0;
-  font-size: 1.5rem;
-}
-
-.instruccion-content p {
-  margin: 0;
-  opacity: 0.8;
-  font-size: 1rem;
-}
+/* HORARIOS */
 
 .horarios-existentes {
-  margin-bottom: 2rem;
-}
-
-.sin-horarios {
-  color: rgba(255, 255, 255, 0.6);
-  font-style: italic;
-  padding: 1rem;
-  text-align: center;
+  margin-bottom: 1.5rem;
 }
 
 .horario-item {
   display: flex;
   align-items: center;
   gap: 0.75rem;
+
   background: rgba(255, 255, 255, 0.1);
-  padding: 0.75rem;
+
+  padding: 0.7rem;
+
   border-radius: 10px;
+
   margin-bottom: 0.5rem;
 }
 
@@ -366,10 +364,14 @@
 }
 
 .estado-badge {
-  padding: 0.25rem 0.75rem;
+  padding: 0.25rem 0.7rem;
+
   border-radius: 20px;
-  font-size: 0.85rem;
+
+  font-size: 0.8rem;
+
   font-weight: bold;
+
   text-transform: capitalize;
 }
 
@@ -390,26 +392,36 @@
 
 .btn-eliminar {
   background: rgba(244, 67, 54, 0.2);
+
   border: none;
+
   padding: 0.4rem 0.6rem;
+
   border-radius: 8px;
+
   cursor: pointer;
+
   transition: all 0.3s ease;
 }
 
 .btn-eliminar:hover {
   background: rgba(244, 67, 54, 0.4);
-  transform: scale(1.1);
+  transform: scale(1.08);
 }
+
+/* FORMULARIO */
 
 .form-nuevo-horario {
   border-top: 1px solid rgba(255, 255, 255, 0.2);
-  padding-top: 1.5rem;
+
+  padding-top: 1.2rem;
 }
 
 .hora-inputs {
   display: flex;
-  gap: 1rem;
+
+  gap: 0.8rem;
+
   margin-bottom: 1rem;
 }
 
@@ -419,70 +431,78 @@
 
 .input-group label {
   display: block;
+
   color: white;
-  font-size: 0.9rem;
-  margin-bottom: 0.5rem;
+
+  font-size: 0.85rem;
+
+  margin-bottom: 0.4rem;
+
   opacity: 0.9;
 }
 
 .input-group input[type="time"] {
   width: 100%;
-  padding: 0.75rem;
+
+  padding: 0.7rem;
+
   border-radius: 10px;
+
   border: 1px solid rgba(255, 255, 255, 0.2);
+
   background: rgba(255, 255, 255, 0.1);
+
   color: white;
-  font-size: 1rem;
+
+  font-size: 0.95rem;
+
   backdrop-filter: blur(10px);
 }
 
 .input-group input[type="time"]:focus {
   outline: none;
+
   border-color: rgba(255, 255, 255, 0.5);
+
   background: rgba(255, 255, 255, 0.15);
 }
 
 .btn-guardar {
   width: 100%;
+
   padding: 0.75rem;
+
   background: rgba(76, 175, 80, 0.3);
+
   border: 1px solid rgba(76, 175, 80, 0.5);
+
   border-radius: 12px;
+
   color: white;
-  font-size: 1rem;
+
+  font-size: 0.95rem;
+
   font-weight: bold;
+
   cursor: pointer;
+
   transition: all 0.3s ease;
+
   backdrop-filter: blur(10px);
 }
 
 .btn-guardar:hover {
   background: rgba(76, 175, 80, 0.4);
+
   transform: translateY(-2px);
+
   box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
 }
 
-/* Scrollbar personalizada para el panel */
-.panel-dia::-webkit-scrollbar {
-  width: 8px;
-}
+/* RESPONSIVE */
 
-.panel-dia::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-}
-
-.panel-dia::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.3);
-  border-radius: 10px;
-}
-
-.panel-dia::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.4);
-}
-
-/* Responsive */
 @media (max-width: 968px) {
+
   .disponibilidad-container {
     grid-template-columns: 1fr;
   }
@@ -490,23 +510,27 @@
   .panel-dia {
     max-height: none;
   }
+
+  .calendario {
+    width: 100%;
+  }
 }
 
 @media (max-width: 640px) {
-  .disponibilidad-page {
+
+  .disponibilidad-page-modal {
     padding: 1rem;
   }
 
   .disponibilidad-header h1 {
-    font-size: 1.8rem;
-  }
-
-  .btn-back {
-    position: static;
-    margin-bottom: 1rem;
+    font-size: 1rem;
   }
 
   .numero-dia {
-    font-size: 1rem;
+    font-size: 0.85rem;
+  }
+
+  .dia-celda {
+    min-width: 28px;
   }
 }

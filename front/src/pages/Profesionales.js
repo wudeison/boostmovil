@@ -14,7 +14,7 @@ const Profesionales = () => {
 
   const cargarProfesionales = async () => {
     try {
-      const response = await fetch("http://localhost:4000/api/profesionales/publico");
+      const response = await fetch("https://backend-a9gw.onrender.com/api/profesionales/publico");
       const data = await response.json();
       
       if (data.profesionales) {

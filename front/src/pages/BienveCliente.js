@@ -17,7 +17,7 @@ const BienveCliente = () => {
   const cargarSesiones = async () => {
     setLoadingSesiones(true);
     try {
-      const response = await fetch(`http://localhost:4000/api/reservas/cliente/${cliente.idUsuario}`);
+      const response = await fetch(`https://backend-a9gw.onrender.com/api/reservas/cliente/${cliente.idUsuario}`);
       const data = await response.json();
       if (response.ok) {
         setSesiones(data.sesiones || []);

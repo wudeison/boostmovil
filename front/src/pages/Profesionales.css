@@ -84,8 +84,10 @@
 /* Grid de profesionales - 3 columnas */
 .profesionales-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  gap: 30px;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 /* En pantallas grandes, forzar exactamente 3 columnas */

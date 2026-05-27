@@ -1,0 +1,36 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+h1, h2, h3 {
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.header {
+    background: #35424a;
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.button {
+    display: inline-block;
+    font-size: 18px;
+    color: #fff;
+    background: #e8491d;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.button:hover {
+    background: #333;
+}

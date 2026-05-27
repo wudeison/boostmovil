@@ -1,358 +1,415 @@
-/* Estilos específicos para RegistroPerfilCliente */
+/* =========================================
+   CONFIGURACIÓN GLOBAL
+========================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+  font-family: Arial, sans-serif;
+}
+
+/* =========================================
+   OVERLAY
+========================================= */
 
 .perfil-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100%;
-  height: 100%;
+  min-height: 100vh;
   background: rgba(0, 0, 0, 0.45);
-  backdrop-filter: blur(6px);
+  backdrop-filter: blur(5px);
   display: flex;
   justify-content: center;
-  align-items: center;
-  z-index: 1000;
-  padding: 10px;
+  align-items: flex-start;
   overflow-y: auto;
+  overflow-x: hidden;
+  padding: 8px;
+  z-index: 1000;
+}
+
+/* =========================================
+   CONTENEDOR PRINCIPAL
+========================================= */
 
 .perfil-container {
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(15px);
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
-  padding: 50px 100px;
   width: 100%;
-  max-width: 1400px;
-  max-height: 95vh;
-  overflow-y: visible;
-  color: #fff;
-  margin: 40px auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  max-width: 850px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 18px;
+  color: white;
+  overflow-x: hidden;
+  margin: auto;
 }
 
-.perfil-container::-webkit-scrollbar {
-  width: 10px;
-}
-
-.perfil-container::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-}
-
-.perfil-container::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.3);
-  border-radius: 10px;
-}
-
-.perfil-container::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.5);
-}
+/* =========================================
+   HEADER
+========================================= */
 
 .perfil-header {
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .perfil-header h2 {
-  font-size: 2rem;
-  color: #fff;
-  margin-bottom: 8px;
-  font-weight: 700;
-  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 6px;
 }
 
 .perfil-header p {
-  color: #fff;
-  font-size: 1rem;
-  text-align: center;
+  font-size: 0.92rem;
 }
+
+/* =========================================
+   FORMULARIO
+========================================= */
 
 .perfil-container form {
   width: 100%;
-  margin: 0;
-  gap: 0;
-  display: block;
 }
 
-/* Galería de avatares */
-.avatar-section {
-  margin-bottom: 40px;
-  text-align: center;
-  width: 100%;
-  overflow: visible;
-}
-
-.avatar-title {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #fff;
-  margin-bottom: 20px;
-  display: block;
-}
-
-.avatar-gallery {
-  display: flex;
-  gap: 30px;
-  justify-content: center;
-  flex-wrap: nowrap;
-  padding: 20px 0;
-  width: 100%;
-  max-width: 100%;
-  overflow: visible;
-}
-
-.avatar-item {
-  width: 110px;
-  height: 110px;
-  object-fit: cover;
-  cursor: pointer;
-  border-radius: 50%;
-  border: 3px solid #ddd;
-  flex: 0 0 110px;
-  transition: all 0.3s ease;
-}
-
-.avatar-item:hover {
-  transform: scale(1.08);
-  border-color: #007bff;
-}
-
-.avatar-item.selected {
-  border: 4px solid #007bff;
-  box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
-  transform: scale(1.1);
-}
-
-/* Formulario */
 .perfil-form {
-  margin-bottom: 30px;
   width: 100%;
 }
+
+/* =========================================
+   GRID
+========================================= */
 
 .form-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(220px, 1fr));
-  gap: 25px 40px;
-  align-items: start;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
   width: 100%;
 }
 
-/* Hacer que ciudad y horario preferido ocupen una columna completa */
-.form-field#ciudad,
-.form-field#preferencias {
-  grid-column: span 1;
-  min-width: 0;
-}
-
-/* Forzar ancho de los inputs/selects dentro de esos campos */
-#ciudad input,
-#preferencias select {
-  width: 100%;
-  min-width: 0;
-}
-
+/* =========================================
+   CAMPOS
+========================================= */
 
 .form-field {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  min-width: 0;
-  text-align: left;
-  margin-bottom: 12px;
-}
-
-.form-field.same-width {
   width: 100%;
   min-width: 0;
 }
 
 .form-field label {
-  font-weight: 600;
-  color: #fff;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
   font-size: 0.9rem;
-  text-align: left !important;
-  display: block;
+  font-weight: bold;
   width: 100%;
 }
+
+/* =========================================
+   INPUTS
+========================================= */
 
 .form-field input,
 .form-field select,
 .form-field textarea {
-  width: 96%;
-  margin-top: 10px;
+  width: 100%;
+  max-width: 100%;
   min-width: 0;
+  padding: 10px;
   border: none;
-  border-radius: 12px;
-  font-size: 0.95rem;
-  transition: all 0.3s ease;
-  background: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.92);
   color: #000;
-  box-sizing: border-box;
+  font-size: 0.92rem;
   outline: none;
-  height: 44px;
-}
-
-.form-field input:focus,
-.form-field select:focus,
-.form-field textarea:focus {
-  background: #fff;
-  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
 }
 
 .form-field textarea {
   resize: vertical;
   min-height: 90px;
-  font-family: inherit;
 }
 
-.form-field input[type="checkbox"] {
-  width: 20px;
-  height: 20px;
-  cursor: pointer;
-  accent-color: #007bff;
-}
+/* =========================================
+   AVATARES
+========================================= */
 
-.checkbox-field {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  flex-direction: row;
-  width: auto;
-  margin: 0;
-}
-
-.checkbox-field span {
-  color: #fff;
-  cursor: pointer;
-  white-space: nowrap;
-  line-height: 1;
-}
-
-.checkbox-group {
-  display: flex !important;
-  gap: 25px;
-  flex-wrap: wrap;
-  margin-top: 10px;
-  flex-direction: row !important;
-  align-items: center;
-  justify-content: flex-start;
+.avatar-section {
+  margin-bottom: 24px;
+  text-align: center;
   width: 100%;
 }
 
-/* Campo que ocupa 2 columnas (bio, observaciones) */
-.form-field.full-width {
-  grid-column: span 4;
-  align-items: flex-start !important;
+.avatar-title {
+  display: block;
+  margin-bottom: 14px;
+  font-weight: bold;
 }
 
-/* Dar más espacio a los dos últimos campos del grid */
-.form-grid > .form-field:nth-last-child(2),
-.form-grid > .form-field:nth-last-child(1) {
-  padding-right: 60px;
-  min-width: 180px;
+.avatar-gallery {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  max-width: 280px;
+  margin: 0 auto;
 }
+
+.avatar-item {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #ccc;
+  cursor: pointer;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+.avatar-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.avatar-item:hover {
+  transform: scale(1.05);
+}
+
+.avatar-item.selected {
+  border: 3px solid #00aaff;
+}
+
+/* =========================================
+   CHECKBOX
+========================================= */
+
+.checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 100%;
+}
+
+.checkbox-field {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.checkbox-field span {
+  font-size: 0.9rem;
+}
+
+.form-field input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+}
+
+/* =========================================
+   HABILIDADES BLANDAS EN FILA
+========================================= */
 
 .form-field.habilidades-field {
-  grid-column: span 2;
+  display: flex;
+  flex-direction: column; /* label arriba */
+  gap: 12px;
 }
 
-/* Botones */
-.form-actions {
+.form-field.habilidades-field label {
+  font-weight: bold;
+}
+
+.form-field.habilidades-field .checkbox-group {
   display: flex;
-  gap: 20px;
+  flex-direction: row;
+  flex-wrap: nowrap;       /* 👈 nunca saltan a otra fila */
+  gap: 24px;
+  justify-content: flex-end; /* 👈 todo el grupo alineado a la derecha */
+  overflow-x: auto;
+}
+
+.form-field.habilidades-field .checkbox-field {
+  display: flex;
+  align-items: center;     /* 👈 checkbox y texto centrados verticalmente */
+  justify-content: flex-start; /* 👈 dentro de cada campo, el cuadrito queda a la izquierda */
+  gap: 6px;
+  min-width: 220px;
+  white-space: nowrap;
+}
+
+
+
+/* =========================================
+   BOTONES
+========================================= */
+
+.form-actions {
+  margin-top: 24px;
+  display: flex;
   justify-content: center;
-  padding-top: 30px;
-  border-top: 2px solid rgba(255, 255, 255, 0.2);
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  width: 100%;
 }
 
 .btn-primary,
 .btn-secondary {
-  padding: 12px 80px;
-  border-radius: 12px;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
   border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
 }
 
 .btn-primary {
   background: linear-gradient(90deg, #007bff, #00c6ff);
   color: white;
-  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
-}
-
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
 }
 
 .btn-secondary {
   background: rgba(255, 255, 255, 0.2);
-  color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  border: 1px solid rgba(255,255,255,0.3);
 }
 
+.btn-primary:hover,
 .btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.03);
 }
 
-/* Responsive */
-@media (max-width: 1600px) {
-  .form-grid {
-    grid-template-columns: repeat(3, minmax(250px, 1fr));
-  }
-}
+/* =========================================
+   RESPONSIVE TABLET
+========================================= */
 
-@media (max-width: 1200px) {
-  .form-grid {
-    grid-template-columns: repeat(2, minmax(280px, 1fr));
-  }
-}
-
-@media (max-width: 1024px) {
+@media (max-width: 900px) {
   .perfil-container {
-    padding: 30px 40px;
-    width: 96%;
+    max-width: 96%;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr 1fr;
   }
 }
+
+/* =========================================
+   RESPONSIVE MÓVIL
+========================================= */
 
 @media (max-width: 768px) {
+  * {
+    max-width: 100% !important;
+  }
+
+  .perfil-overlay {
+    padding: 4px;
+  }
+
   .perfil-container {
-    padding: 20px 25px;
-    max-height: 95vh;
-    width: 95%;
+    width: 100%;
+    max-width: 100%;
+    padding: 14px;
+    border-radius: 14px;
+    overflow-x: hidden;
+  }
+
+  .perfil-header {
+    text-align: center;
   }
 
   .perfil-header h2 {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
+  }
+
+  .perfil-header p {
+    font-size: 0.84rem;
+  }
+
+  .perfil-form,
+  .form-grid,
+  .form-field,
+  .checkbox-group,
+  .idiomas-inline,
+  .avatar-gallery,
+  .form-actions {
+    width: 100% !important;
+    min-width: 0 !important;
+    overflow-x: hidden !important;
   }
 
   .form-grid {
-    grid-template-columns: 1fr;
-    gap: 18px;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
   }
-  
-  .form-field.full-width {
-    grid-column: span 1;
+
+  .form-field.full-width,
+  .form-field.habilidades-field {
+    grid-column: span 1 !important;
+    width: 100% !important;
+  }
+
+  .form-field label {
+    width: 100%;
+    text-align: left;
+  }
+
+  .form-field input,
+  .form-field select,
+  .form-field textarea {
+    width: 100% !important;
+    max-width: 100% !important;
+    font-size: 0.9rem;
+    padding: 9px;
+  }
+
+  .checkbox-group,
+  .idiomas-inline {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  .avatar-gallery {
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+    max-width: 240px;
+    margin: auto;
   }
 
   .avatar-item {
-    width: 80px;
-    height: 80px;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  .avatar-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .form-field.habilidades-field .checkbox-group {
+    flex-wrap: wrap !important;
+    gap: 12px !important;
   }
 
   .form-actions {
-    flex-direction: column;
-  }
-
-  .btn-primary,
-  .btn-secondary {
-    width: 100%;
+    flex-direction: column !important;
+    align-items: center !important;
   }
 }
